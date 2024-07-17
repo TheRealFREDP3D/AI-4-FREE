@@ -4,7 +4,9 @@
 #  │ ollama_lister.sh                                                         │  
 #  │ Author:       Frederick Pellerin                                         │
 #  │ X/GitHub:     @TheRealFredP3D                                            │
-#  │ Date:         16-072027                                                  │
+#  │ Date:         16-07-2027                                                 │
+#  │ Change log:   17-07-2027 - Fix - the script was adding a alias when one  │
+#  │                                  already existed.                        │
 #  └──────────────────────────────────────────────────────────────────────────┘
 
 # 1.Download the file`ollama_list.sh`
@@ -22,7 +24,7 @@ echo "│ A tool designed to make life easier for people who frequently work    
 echo "│ with multiple Ollama AI models, providing a quick and visually appealing │"
 echo "│ way to view and manage their model list.                                 │"
 echo "│ This script detect your active shell, check if the alias 'ollamal' exist.│"
-echo "│ Of not, add it to your shell config file.                                │"
+echo "│ If not, add it to your shell config file.                                │"
 echo "└──────────────────────────────────────────────────────────────────────────┘"
 echo ""
 echo "┌──────────────────────────────────────────────────────────────────────────┐"
@@ -62,17 +64,20 @@ else
     exit 1
 fi
 
-# Define the alias you want to add
-alias_to_add="alias ollamal='$PWD/ollama_lister.sh'"
+add_alias_if_not_exists() {
+  local alias_name="$1"
+  local alias_command="$2"
+  local config_file="$3"
+  
+  if ! grep -q "alias $alias_name=" "$config_file"; then
+    echo "alias $alias_name='$alias_command'" >> "$config_file"
+    echo "Alias $alias_name added to $config_file"
+  else
+    echo "Alias $alias_name already exists in $config_file"
+  fi
+}
 
-# Check if the alias already exists in the config file
-if grep -q "alias myalias=" "$config_file"; then
-    # echo "Alias already exists in $config_file"
-else
-    # Add the alias to the config file
-    echo "$alias_to_add" >> "$config_file"
-    echo "Alias added to $config_file"
-fi
+add_alias_if_not_exists "ollamal" "$PWD/ollama_lister.sh" "$config_file"
 
 # Remind the user to source the config file
 echo "Remember to run 'source $config_file' to apply the changes in your current session."
