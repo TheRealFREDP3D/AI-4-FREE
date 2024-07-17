@@ -21,36 +21,37 @@ echo "│ ollama_lister.sh                                                      
 echo "│ A tool designed to make life easier for people who frequently work       │"
 echo "│ with multiple Ollama AI models, providing a quick and visually appealing │"
 echo "│ way to view and manage their model list.                                 │"
-echo "│ This script detect your active shell, check if the alias 'ollamal' exist.│"
-echo "│ Of not, add it to your shell config file.                                │"
+echo "│ This script detects your active shell, check if the alias 'ollamal'      │" 
+echo "│ exists.                                                                  │"
+echo "│ If not, add it to your shell config file.                                │"
 echo "└──────────────────────────────────────────────────────────────────────────┘"
-echo ""
+echo " "
 echo "┌──────────────────────────────────────────────────────────────────────────┐"
 echo "│                            OLLAMA LAZY LISTER                            │"
 echo "└──────────────────────────────────────────────────────────────────────────┘"
 ollama list
 
-echo ""
+echo " "
 echo "****************************************************************************"
-echo ""
+echo " "
 
 echo "┌──────────────────────────────────────────────────────────────────────────┐"
 echo "│                                 Full Name                                │"
 echo "└──────────────────────────────────────────────────────────────────────────┘"
 awk '{ print $1 }' <(ollama list)
 
-echo ""
+echo " "
 echo "****************************************************************************"
-echo ""
+echo " "
 
 echo "┌──────────────────────────────────────────────────────────────────────────┐"
 echo "│                                 Short Name                                │"
 echo "└──────────────────────────────────────────────────────────────────────────┘"
 awk -F':' '{ print $1 }' <(ollama list)
 
-echo ""
+echo " "
 echo "****************************************************************************"
-echo ""
+echo " "
 
 # Detect the current shell
 if [ -n "$ZSH_VERSION" ]; then
