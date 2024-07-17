@@ -8,8 +8,7 @@
 #  └──────────────────────────────────────────────────────────────────────────┘
 
 # 1.Download the file`ollama_list.sh`
-
-# TODO `wget https://github.com/TheRealFRED3D/AI-4-FREE/Ollama/ollama-lister.sh
+# 'https://github.com/TheRealFREDP3D/AI-4-FREE/blob/main/Ollama/ollama_lister.sh'
 
 # 2. Make the file executable by running:
 # `chmod +x ollama_lister.sh`
