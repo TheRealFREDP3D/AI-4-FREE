@@ -16,19 +16,15 @@
 # 3. Run the script using:
 #./ollama_list.sh
 
-# This will print the raw output of the `ollama list` command, and the name in full
-# and short version.
-#
-# I install and test new LLM models on a daily basis. Hard to keep track of the
-# available ones and their names. and which one is currently installed.
-# A script born from laziness.
-
-# This script detect your active shell, check if the alias 'ollamal' exist.
-# Of not, add it to your shell config file.
-
-# Running 'ollamal'  will print the LLM models Ollama can serve in a copy/paste
-# friendly cersion.
-
+echo "┌──────────────────────────────────────────────────────────────────────────┐"
+echo "│ ollama_lister.sh                                                         │"
+echo "│ A tool designed to make life easier for people who frequently work       │"
+echo "│ with multiple Ollama AI models, providing a quick and visually appealing │"
+echo "│ way to view and manage their model list.                                 │"
+echo "│ This script detect your active shell, check if the alias 'ollamal' exist.│"
+echo "│ Of not, add it to your shell config file.                                │"
+echo "└──────────────────────────────────────────────────────────────────────────┘"
+echo ""
 echo "┌──────────────────────────────────────────────────────────────────────────┐"
 echo "│                            OLLAMA LAZY LISTER                            │"
 echo "└──────────────────────────────────────────────────────────────────────────┘"
