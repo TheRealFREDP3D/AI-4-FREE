@@ -4,7 +4,7 @@
 #  │ ollama_lister.sh                                                         │  
 #  │ Author:       Frederick Pellerin                                         │
 #  │ X/GitHub:     @TheRealFredP3D                                            │
-#  │ Date:         16-072027                                                  │
+#  │ Date:         16-07-2024                                                 │
 #  └──────────────────────────────────────────────────────────────────────────┘
 
 # 1.Download the file`ollama_list.sh`
