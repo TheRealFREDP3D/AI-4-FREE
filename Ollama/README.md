@@ -21,4 +21,4 @@ If not, add it to your shell config file.
 
 ### ollama-lister-v1.1.0.sh
 
-Added a couple of fesatures and chabged the visual aspect of the script.
+Added a couple of features and changed the visual aspect of the script.
