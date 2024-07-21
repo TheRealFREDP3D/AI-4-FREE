@@ -1,11 +1,12 @@
 ## Author
 
-Frederick Pellerin (@TheRealFredP3D)
+Frederick Pellerin
 
-## Version History
+X/GitHub: @TheRealFredP3D
 
-- 16-07-2027: Initial release
-- 17-07-2027: Fixed issue in ollama_lister.sh where the script was adding an alias when one already existed
+## What is it
+
+I'll keep here stuff purely used with Ollama.
 
 ## Files
 
@@ -15,3 +16,9 @@ A tool designed to make life easier for people who frequently work with multiple
 
 This script detect your active shell, check if the alias 'ollamal' exist.
 If not, add it to your shell config file.
+
+---
+
+### ollama-lister-v1.1.0.sh
+
+Added a couple of fesatures and chabged the visual aspect of the script.
